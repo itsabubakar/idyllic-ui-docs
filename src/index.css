@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,
+body,
+body>div {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.link {
+  @apply text-sm text-gray-700 px-2 py-2
+}
+
+.active-link {
+  @apply bg-gray-200 rounded-md text-gray-900 font-semibold
+}
