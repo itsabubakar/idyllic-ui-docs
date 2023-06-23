@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../components/CodeBlock'
 import { Link } from 'react-router-dom';
+import Linker from '../components/Linker';
 const Installation = () => {
 
     const [packageManager, setPackageManager] = useState('npm i')
@@ -15,13 +16,13 @@ const Installation = () => {
         if (manager === 'npm') {
             setPackageManager('npm i')
         } else if (manager === 'pnpm') {
-            setPackageManager('pnpm i')
+            setPackageManager('pnpm add')
         } else {
             setPackageManager('yarn add')
         }
     }
 
-    const code = ` ${packageManager} idyllic-ui`;
+    const code = ` ${packageManager} idyllic-ui`
 
     return (
         <div>
@@ -43,19 +44,15 @@ const Installation = () => {
                     </nav>
                 </div>
 
-                <div className='mt-4 rounded'>
-                    <CodeBlock code={code} />
+                <div className='mt-5 rounded'>
+                    <CodeBlock code={code} language={'bash'} />
                 </div>
                 <p className='text-base text-gray-700 mt-8'>After installing Idyllic UI, you can start using it by importing the components where you need them.</p>
                 <p className='text-base mt-2 text-gray-700'>This can be anywhere you can use a React component.</p>
 
-                <div>
-                    <Link to='/'>Edit this page on Github</Link>
-                    <div>
-                        <h3>Next</h3>
-                        <Link>Configuration</Link>
-                    </div>
-                </div>
+                <Linker pageLink={'configuration'} />
+
+
             </div>
         </div>
     )
