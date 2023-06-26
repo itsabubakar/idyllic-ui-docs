@@ -1,12 +1,15 @@
 import { useState } from 'react';
-import CodeBlock from '../components/CodeBlock'
-import { Link } from 'react-router-dom';
-import Linker from '../components/Linker';
+// import CodeBlock from '../components/CodeBlock'
+import Code from '../components/Code';
+import CodeBlock from '../components/CodeBlock';
+// import Linker from '../components/Linker';
+
+
 const Installation = () => {
 
     const [packageManager, setPackageManager] = useState('npm i')
 
-    const setActive = (e) => {
+    const setActive = (e: any) => {
         let tabs = e.target.parentElement.childNodes;
         for (let i = 0;i < tabs.length;i++) {
             tabs[i].classList.remove('border-b-2')
@@ -23,6 +26,19 @@ const Installation = () => {
     }
 
     const code = ` ${packageManager} idyllic-ui`
+
+
+    const codeBlock = `
+const GroceryItem: React.FC<GroceryItemProps> = ({ item }) => {
+  return (
+    <div>
+      <h2>{item.name}</h2>
+      <p>Price: {item.price}</p>
+      <p>Quantity: {item.quantity}</p>
+    </div>
+  );
+}
+`
 
     return (
         <div>
@@ -45,12 +61,15 @@ const Installation = () => {
                 </div>
 
                 <div className='mt-5 rounded'>
-                    <CodeBlock code={code} language={'bash'} />
+                    <Code variant="black">npm install mongoose</Code>
+                    <CodeBlock codeString='npm install mongoose' />
+
                 </div>
-                <p className='text-base text-gray-700 mt-8'>After installing Idyllic UI, you can start using it by importing the components where you need them.</p>
+                <p className='text-base text-gray-700 mt-8'>After installing Idyllic UI, you can start using it by importing the components where you need them!.</p>
                 <p className='text-base mt-2 text-gray-700'>This can be anywhere you can use a React component.</p>
 
-                <Linker pageLink={'configuration'} />
+                {/* <Linker pageLink={'configuration'} /> */}
+
 
 
             </div>

@@ -10,7 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "idyllic-ui": "^1.0.0",
+    "idyllic-ui": "^1.0.9",
+    "prism-react-renderer": "^2.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",

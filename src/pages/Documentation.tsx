@@ -5,7 +5,7 @@ const Documentation = () => {
     return (
         <div className="flex h-full">
             <Sidebar />
-            <div className="px-14 py-10 max-w-4xl">
+            <div className="px-14 py-10">
                 <Outlet />
             </div>
         </div>
