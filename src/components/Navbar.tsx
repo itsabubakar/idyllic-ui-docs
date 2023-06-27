@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <header className='sticky top-0 bg-white'>
+        <header className='sticky top-0 bg-white z-10'>
             <nav className='px-4 py-3 border-b shadow-sm top-10 bottom-4'>
                 <ul className='flex items-center'>
                     <li><Link to="/" className='tracking-wider flex items-center gap-2 text-lg text-gray-900 font-bold'><AiOutlineExpand size={16} />Idyllic UI</Link></li>

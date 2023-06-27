@@ -4,6 +4,8 @@ import { ButtonHTMLAttributes, ClassAttributes, useState } from "react";
 // import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { JSX } from "react/jsx-runtime";
 
+import './codeblock.module.css';
+
 export interface CopyBlockProps {
     codeString: string;
     language?: Language;
@@ -48,35 +50,37 @@ const CodeBlock = ({ codeString }: CopyBlockProps) => {
     );
 
     return (
-        <Highlight
-            theme={themes.duotoneDark}
-            code={codeString}
-            language="tsx"
-        >
-            {({ style, tokens, getTokenProps }) => (
-                <pre style={style} className="py-3 px-2 rounded text-sm relative ">
-                    <Button
-                        className="focus:outline-none"
-                        onClick={() => {
-                            copyToClipboard(codeString);
-                            setIsCopied(true);
-                            setTimeout(() => setIsCopied(false), 3000);
-                        }}
-                    >
-                        {isCopied ? '🎉 Copied!' : 'Copy'}
-                    </Button>
-                    {tokens.map((line, i) => (
-                        <div key={i}>
-                            {/* <span>{i + 1}</span> */}
-                            {line.map((token, key) => (
-                                <span key={key} {...getTokenProps({ token })} />
-                            ))}
-                        </div>
-                    ))}
-                </pre>
-            )}
+        <div className="max-w-3xl">
+            <Highlight
+                theme={themes.duotoneDark}
+                code={codeString}
+                language="tsx"
+            >
+                {({ style, tokens, getTokenProps }) => (
+                    <pre style={style} className="pre relative text-[12px]">
+                        <Button
+                            className="focus:outline-none"
+                            onClick={() => {
+                                copyToClipboard(codeString);
+                                setIsCopied(true);
+                                setTimeout(() => setIsCopied(false), 3000);
+                            }}
+                        >
+                            {isCopied ? '🎉 Copied!' : 'Copy'}
+                        </Button>
+                        {tokens.map((line, i) => (
+                            <div key={i}>
+                                {/* <span>{i + 1}</span> */}
+                                {line.map((token, key) => (
+                                    <span key={key} {...getTokenProps({ token })} />
+                                ))}
+                            </div>
+                        ))}
+                    </pre>
+                )}
+            </Highlight>
+        </div>
 
-        </Highlight>
     )
 }
 export default CodeBlock
