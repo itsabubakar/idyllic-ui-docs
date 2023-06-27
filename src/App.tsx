@@ -11,6 +11,7 @@ import Installation from './pages/Installation';
 import Configuration from './pages/Configuration';
 
 import Alert from './pages/components/Alert';
+import Context from './context/Context';
 // import Button from './pages/ui/Button';
 // import Container from './pages/ui/Container';
 // import FormControl from './pages/ui/FormControl';
@@ -22,26 +23,28 @@ import Alert from './pages/components/Alert';
 const App = () => {
   return (
     <div className='h-full relative'>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/documentation' element={<Documentation />}>
-            <Route path='installation' element={<Installation />} />
-            <Route path='configuration' element={<Configuration />} />
-            {/* Ui components */}
-            <Route path='alert' element={<Alert />} />
-            {/* <Route path='button' element={<Button />} />
+      <Context>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/documentation' element={<Documentation />}>
+              <Route path='installation' element={<Installation />} />
+              <Route path='configuration' element={<Configuration />} />
+              {/* Ui components */}
+              <Route path='alert' element={<Alert />} />
+              {/* <Route path='button' element={<Button />} />
             <Route path='container' element={<Container />} />
             <Route path='form' element={<FormControl />} />
             <Route path='header' element={<Header />} />
             <Route path='spinner' element={<Spinner />} />
             <Route path='text' element={<Text />} /> */}
 
-          </Route>
-          <Route path='*' element={<Error />} />
-        </Routes>
-      </Router>
+            </Route>
+            <Route path='*' element={<Error />} />
+          </Routes>
+        </Router>
+      </Context>
     </div>
   )
 }

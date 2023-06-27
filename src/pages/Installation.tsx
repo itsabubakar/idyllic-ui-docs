@@ -46,7 +46,7 @@ const GroceryItem: React.FC<GroceryItemProps> = ({ item }) => {
                 <h2 className="text-4xl font-bold text-gray-800">Installation</h2>
                 <p className="text-base text-gray-700 pt-6">To use Idyllic UI in your React project, run one of the following commands in your terminal:</p>
 
-                <div className="bg-white border-b-2 mt-4">
+                <div className="bg-white  mt-4">
                     <nav className="flex flex-col sm:flex-row" onClick={setActive}>
                         <button className="text-gray-600 text-sm py-2 px-6 block hover:text-blue-500 focus:outline-none border-b-2 font-medium border-gray-500 -mb-[2px]">
                             npm

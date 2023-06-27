@@ -14,7 +14,6 @@ const Configuration = () => {
         <div className="">
             <div className="">
                 <h2>Configuration page</h2>
-
                 <CodeBlock codeString={Code} />
             </div>
         </div>
