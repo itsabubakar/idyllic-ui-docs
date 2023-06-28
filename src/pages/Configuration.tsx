@@ -4,7 +4,7 @@
 // import Linker from "../components/Linker"
 // import React from "react"
 
-import { Code } from "./components/Button/ButtonSnippet";
+import { Code } from "./Button/ButtonSnippet";
 import CodeBlock from "../components/CodeBlock";
 
 

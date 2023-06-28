@@ -6,7 +6,6 @@ import { useContext } from "react"
 
 const Documentation = () => {
     const { sidebarOpen } = useContext(AppContext)
-    console.log(sidebarOpen);
 
     return (
         <div className="flex h-full relative">
@@ -19,4 +18,4 @@ const Documentation = () => {
         </div>
     )
 }
-export default Documentation
+export default Documentation    
