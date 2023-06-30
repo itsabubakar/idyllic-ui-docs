@@ -8,8 +8,8 @@ const Documentation = () => {
     const { sidebarOpen } = useContext(AppContext)
 
     return (
-        <div className="flex h-full relative">
-            <div className={`${sidebarOpen ? 'absolute ' : 'hidden sm:flex'} z-10 h-full bg-white sm:relative`}>
+        <div className="flex  relative">
+            <div className={`${sidebarOpen ? 'absolute h-full' : 'hidden sm:flex'} z-10   bg-white sm:relative`}>
                 <Sidebar />
             </div>
             <div className="p-5 sm:px-14 sm:py-10">

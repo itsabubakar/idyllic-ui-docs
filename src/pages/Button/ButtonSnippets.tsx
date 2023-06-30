@@ -32,3 +32,17 @@ export const Code = ` <div className="">
     </Highlight>
 </div>
 </div>`
+
+export const ButtonImport = `import {Button} from 'idyllic-ui`
+
+export const ButtonPreview = `<Button>Button</Button>`
+
+export const ButtonVariant = `<Button type="light">Button</Button>
+<Button type="dark">Button</Button>
+<Button type="light-outline">Button</Button>
+<Button type="dark-outline">Button</Button>`
+
+export const ButtonExtend = `<Button cn="bg-green-500 text-white hover:text-black">Button</Button>
+<Button cn="bg-red-500 text-white  hover:text-black" >Button</Button>
+<Button cn="bg-gray-500 text-white hover:text-black" >Button</Button>
+<Button cn="bg-yellow-500 text-white hover:text-black">Button</Button>`

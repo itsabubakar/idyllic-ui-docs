@@ -4,8 +4,8 @@
 // import Linker from "../components/Linker"
 // import React from "react"
 
-import { Code } from "./Button/ButtonSnippet";
-import CodeBlock from "../components/CodeBlock";
+// import { Code } from "./Button/ButtonSnippet";
+// import CodeBlock from "../components/CodeBlock";
 
 
 const Configuration = () => {
@@ -14,7 +14,7 @@ const Configuration = () => {
         <div className="">
             <div className="">
                 <h2>Configuration page</h2>
-                <CodeBlock codeString={Code} />
+                {/* <CodeBlock codeString={Code} /> */}
             </div>
         </div>
     )

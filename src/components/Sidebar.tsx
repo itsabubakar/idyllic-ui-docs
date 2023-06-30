@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 const Sidebar = () => {
     return (
-        <div className="w-52 border-r flex flex-col px-5">
+        <div className="w-52 border-r flex flex-col px-5 h-full">
             <h2 className="text-base text-gray-800 mt-10 mb-4 font-semibold">Setup</h2>
             <div className="flex flex-col">
                 <NavLink

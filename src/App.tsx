@@ -13,10 +13,12 @@ import Configuration from './pages/Configuration';
 import Context from './context/Context';
 
 import Button from './pages/Button/Button';
+import ButtonUsage from './pages/Button/ButtonUsage';
+import ButtonProps from './pages/Button/ButtonProps';
 
 const App = () => {
   return (
-    <div className='h-full relative'>
+    <div className='relative'>
       <Context>
         <Router>
           <Navbar />
@@ -27,7 +29,10 @@ const App = () => {
               <Route path='configuration' element={<Configuration />} />
               {/* Ui components */}
               {/* <Route path='alert' element={<Alert />} /> */}
-              <Route path='button' element={<Button />} />
+              <Route path='button' element={<Button />}>
+                <Route path='/documentation/button' element={<ButtonUsage />} />
+                <Route path='props' element={<ButtonProps />} />
+              </Route>
               {/* <Route path='container' element={<Container />} /> */}
               {/* <Route path='form' element={<FormControl />} /> */}
               {/* <Route path='header' element={<Header />} /> */}

@@ -1,7 +1,5 @@
 import { Highlight, themes, Language } from "prism-react-renderer";
 import { ButtonHTMLAttributes, ClassAttributes, useState } from "react";
-// import SyntaxHighlighter from "react-syntax-highlighter";
-// import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { JSX } from "react/jsx-runtime";
 
 import './codeblock.module.css';
@@ -57,7 +55,7 @@ const CodeBlock = ({ codeString }: CopyBlockProps) => {
                 language="tsx"
             >
                 {({ style, tokens, getTokenProps }) => (
-                    <pre style={style} className="pre relative text-[12px]">
+                    <pre style={style} className="pre relative text-[12px] py-4 text-sm rounded-b-md">
                         <Button
                             className="focus:outline-none"
                             onClick={() => {
@@ -68,14 +66,15 @@ const CodeBlock = ({ codeString }: CopyBlockProps) => {
                         >
                             {isCopied ? '🎉 Copied!' : 'Copy'}
                         </Button>
-                        {tokens.map((line, i) => (
-                            <div key={i}>
-                                {/* <span>{i + 1}</span> */}
-                                {line.map((token, key) => (
-                                    <span key={key} {...getTokenProps({ token })} />
-                                ))}
-                            </div>
-                        ))}
+                        <div>
+                            {tokens.map((line, i) => (
+                                <div key={i}>
+                                    {line.map((token, key) => (
+                                        <span key={key} {...getTokenProps({ token })} />
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
                     </pre>
                 )}
             </Highlight>
